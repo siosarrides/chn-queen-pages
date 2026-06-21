@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赏金女王 · 简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce9d8 0%, #f9d4b0 50%, #f3bc93 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.8rem 1.2rem;
+            line-height: 1.7;
+            color: #2e241e;
+        }
+
+        .magazine-card {
+            max-width: 780px;
+            width: 100%;
+            background: #fffcf8;
+            border-radius: 40px 40px 32px 32px;
+            box-shadow: 0 18px 40px rgba(100, 60, 30, 0.18), 0 6px 12px rgba(0, 0, 0, 0.03);
+            padding: 2.4rem 2.2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #eac7a3, #d9af87);
+            border-radius: 28px 28px 18px 18px;
+            padding: 2.2rem 1.8rem;
+            margin-bottom: 2.4rem;
+            text-align: center;
+            box-shadow: inset 0 1px 0 rgba(255, 245, 235, 0.5);
+        }
+
+        .hero-banner h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: 0.02em;
+            color: #1f160f;
+            margin-bottom: 0.2rem;
+            text-shadow: 0 1px 1px rgba(255, 215, 180, 0.5);
+        }
+
+        .hero-banner .subhead {
+            font-size: 1.1rem;
+            font-weight: 370;
+            color: #3b2b20;
+            background: rgba(246, 224, 202, 0.55);
+            display: inline-block;
+            padding: 0.2rem 1.2rem;
+            border-radius: 30px;
+            backdrop-filter: blur(2px);
+            margin-top: 0.6rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08rem;
+            background: #e9d4bf;
+            color: #3c2a1c;
+            padding: 0.15rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 0.8rem;
+        }
+
+        .intro-block {
+            margin-bottom: 2rem;
+        }
+
+        .intro-block p {
+            margin-bottom: 1.1rem;
+            font-size: 1.05rem;
+        }
+
+        .highlight-link {
+            color: #b05b2b;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid #e3b48b;
+            transition: border-color 0.15s, background 0.15s;
+            padding: 0 2px 1px 2px;
+            border-radius: 2px;
+        }
+
+        .highlight-link:hover {
+            border-bottom-color: #a24c1e;
+            background: #fbe7d8;
+        }
+
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.8rem 0 2.2rem;
+        }
+
+        .feature-item {
+            background: #f9efe8;
+            border-radius: 24px;
+            padding: 1.2rem 1.4rem;
+            flex: 1 1 180px;
+            transition: background 0.15s;
+            box-shadow: 0 2px 6px rgba(60, 35, 15, 0.04);
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 520;
+            color: #4e3221;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #2e1f16;
+            margin: 0;
+        }
+
+        .tip-box {
+            background: #ebd9ca;
+            border-radius: 24px;
+            padding: 1.4rem 1.6rem;
+            margin: 2rem 0 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.3rem 0.8rem;
+        }
+
+        .tip-box .tip-label {
+            font-weight: 600;
+            color: #4a2d1a;
+            background: #f1e1d1;
+            padding: 0.1rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+        }
+
+        .tip-box p {
+            margin: 0;
+            font-size: 0.98rem;
+            color: #2d1f14;
+            flex: 1;
+        }
+
+        .faq-mini {
+            margin: 1.8rem 0 1.2rem;
+            border-top: 2px dashed #dac2ae;
+            padding-top: 1.6rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.1rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 510;
+            color: #4a2d1a;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: 0.98rem;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #6b5340;
+            border-top: 1px solid #ebd4c2;
+            padding-top: 1.6rem;
+        }
+
+        .footer-note a {
+            color: #8a4c25;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid #dbb79b;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #8a4c25;
+        }
+
+        @media (max-width: 540px) {
+            .magazine-card {
+                padding: 1.6rem 1.2rem;
+                border-radius: 30px;
+            }
+
+            .hero-banner {
+                padding: 1.6rem 1rem;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.8rem;
+            }
+
+            .features-grid {
+                flex-direction: column;
+            }
+
+            .feature-item {
+                flex: 1 1 auto;
+            }
+
+            .tip-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .magazine-card {
+                padding: 1.2rem 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="magazine-card">
+        <!-- hero 横幅 -->
+        <div class="hero-banner">
+            <h1>赏金女王 · 简明指南</h1>
+            <div class="subhead">随时了解 · 清晰参照</div>
+        </div>
+
+        <!-- 背景说明 + 第一段自然介绍 -->
+        <div class="intro-block">
+            <span class="section-label">背景</span>
+            <p><strong>赏金女王</strong> 是一个持续运营的线上内容平台，主要围绕特定主题提供信息整理与互动服务。许多用户将其作为日常参考的来源之一，页面设计兼顾浏览效率与内容调性。</p>
+        </div>
+
+        <!-- 第二段：特点 + 场景 以卡片网格呈现 -->
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>信息归类</h3>
+                <p>按板块整理常见话题，方便快速定位感兴趣的部分，减少反复翻找。</p>
+            </div>
+            <div class="feature-item">
+                <h3>访问提醒</h3>
+                <p>推荐使用主流浏览器，保持网址准确，避免通过非正式渠道跳转。</p>
+            </div>
+            <div class="feature-item">
+                <h3>使用场景</h3>
+                <p>适合在需要了解相关主题时打开，作为辅助参考，而非唯一依据。</p>
+            </div>
+        </div>
+
+        <!-- 第三段：更具体的介绍 + 链接自然嵌入句子 -->
+        <div class="intro-block">
+            <span class="section-label">使用方式</span>
+            <p>如果你正在寻找一个可以定期浏览的信息聚合点，<a href="https://chn-queen.com" class="highlight-link">赏金女王</a> 是一个值得留意的选择。站内内容会保持更新，结构上也尽量让初次访问者不至于迷失。建议先花几分钟熟悉主要分类，后续使用会更顺手。</p>
+            <p>从实际体验来说，将常用页面加入浏览器书签，可以节省重复输入的精力。同时留意网络环境，部分功能可能需要稳定的连接才能正常加载。</p>
+        </div>
+
+        <!-- 提示区块 访问提醒 -->
+        <div class="tip-box">
+            <span class="tip-label">📌 访问提醒</span>
+            <p>确认域名准确（chn-queen.com），避免拼写错误或仿冒站点。不要轻易泄露个人账户信息，保持基本的网络安全意识。</p>
+        </div>
+
+        <!-- FAQ 摘要风格 -->
+        <div class="faq-mini">
+            <span class="section-label">常见问题摘要</span>
+            <div class="faq-item">
+                <strong>是否需要注册才能浏览大部分内容？</strong>
+                <p>根据当前页面设置，多数板块可直接查看，部分互动功能可能要求登录。</p>
+            </div>
+            <div class="faq-item">
+                <strong>移动端适配情况如何？</strong>
+                <p>页面针对手机和平板做过基础优化，横竖屏均可正常阅读，但部分排版在极小屏幕上可能略有压缩。</p>
+            </div>
+            <div class="faq-item">
+                <strong>内容更新的频率？</strong>
+                <p>没有固定周期，但隔一段时间再访通常能看到新增或调整后的内容。</p>
+            </div>
+        </div>
+
+        <!-- 页尾访问提示 -->
+        <div class="footer-note">
+            <p>若需直接访问，可以使用上方链接前往 <a href="https://chn-queen.com">赏金女王</a>。本页仅作介绍，不构成任何操作建议。</p>
+        </div>
+    </div>
+</body>
+</html>
